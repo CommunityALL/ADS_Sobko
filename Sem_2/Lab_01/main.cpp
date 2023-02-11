@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     cout << "Lab_01 var_4" << endl;
 
-    cout << "What is part of lab_01 (1-3)?";
+    cout << "What is part of lab_01 (1-3)?\n";
     int partOfLab;
     cin >> partOfLab;
     if (partOfLab == 1) {
@@ -30,8 +30,7 @@ int main(){
         path2 = (boatSpeed + riverSpeed) * riverTravelTime;
         cout << "The path that the boat will take along the lake at a speed V in time T1 is (km):\n";
         cout << path1 << endl;
-        cout
-                << "The path that the boat will travel along the river at a speed V in time T2, at a speed of the river U, is (km)\n";
+        cout << "The path that the boat will travel along the river at a speed V in time T2, at a speed of the river U, is (km)\n";
         cout << path2 << endl;
     }
     else if (partOfLab == 2) {
