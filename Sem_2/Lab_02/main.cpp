@@ -53,13 +53,13 @@ int main(){
             i += 2;
         }
         cout << "Sum of array elements with unpaired numbers:\n";
-        cout << sumOfUnpairedElements;
+        cout << sumOfUnpairedElements << endl;
         int sumOfElementsInMiddle = 0;
         for(int i = firstNegative + 1; i < secondNegative; i++){
             sumOfElementsInMiddle += arr[i];
         }
         cout << "Sum of array elements that are between the first and last negative elements:\n";
-        cout << sumOfElementsInMiddle;
+        cout << sumOfElementsInMiddle << endl;
     }
     else if (partOfLab == 2) {
 
