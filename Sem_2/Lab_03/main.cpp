@@ -4,7 +4,7 @@ using namespace std;
 
 struct Aeroflot {
     string City;
-    int Num;
+    int Num{};
     string Type;
 };
 int numberOfFlights;
