@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    cout << "Lab_03 var_4" << endl;
+    cout << "Lab_04 var_4" << endl;
 
     cout << "What is part of lab_04 (1-2)?\n";
     int partOfLab;
