@@ -76,7 +76,8 @@ int main(){
         cout << i + 1 << ":\n";
         cout << currentElement->NameOfElement << endl;
     }
-    cout << "Name of current element:\n";
+    currentElement = currentElement->next;
+    cout << "Name of first element:\n";
     cout << currentElement->NameOfElement << endl;
     return 0;
 }
