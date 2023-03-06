@@ -300,7 +300,7 @@ int main(){
                 currentParticipant->prev = lastParticipant;
                 counter01++;
             } while (lastParticipant->Surname != ".");
-            currentParticipant = lastParticipant;
+            currentParticipant = lastParticipant->prev;
             currentParticipant->next = firstParticipant;
             firstParticipant->prev = currentParticipant;
             counter01--;
@@ -317,7 +317,7 @@ int main(){
                 currentPrize->prev = lastPrize;
                 counter02++;
             } while (lastPrize->NamePrize != ".");
-            currentPrize = lastPrize;
+            currentPrize = lastPrize->prev;
             currentPrize->next = firstPrize;
             firstPrize->prev = currentPrize;
             counter02--;
