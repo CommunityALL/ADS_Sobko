@@ -60,7 +60,6 @@ int main(){
     }
     cout << allStrings << " (" << allStrings.size() << ")" << endl;
 
-
     return 0;
 }
 
