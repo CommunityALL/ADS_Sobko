@@ -26,7 +26,8 @@ int main(){
     queue->last = nullptr;
     int input01 = 1;
     while(input01 != 0) {
-        cout << "You want to...\n1 - add element to queue.\n2 - delete first element of queue.\n3 - display the queue.\n(0 - finish program.)\n";
+        cout << "You want to...\n1 - add element to queue.\n2 - delete first element of queue.\n" <<
+                "3 - display the queue.\n(0 - finish program.)\n";
         cin >> input01;
         switch (input01) {
             case 1: {
@@ -57,7 +58,8 @@ int main(){
         currentElement = currentElement->next;
         allStrings += currentElement->String;
     }
-    cout << allStrings << endl;
+    cout << allStrings << " (" << allStrings.size() << ")" << endl;
+
 
     return 0;
 }
