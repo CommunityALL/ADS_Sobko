@@ -51,7 +51,7 @@ void find_07_p1(TreeNode_07_p1 const * tree, double data, string const & prefix 
         find_07_p1(v[i], data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, i + 1 >= v.size());
 }
 
-struct TreeNode_07_p1*  newNode_07_p1(double item);
+struct TreeNode_07_p1* newNode_07_p1(double item);
 struct TreeNode_07_p1* insert_07_p1(struct TreeNode_07_p1 *node, double data);
 struct TreeNode_07_p1* minValueNode_07_p1(struct TreeNode_07_p1 *node);
 struct TreeNode_07_p1* maxValueNode_07_p1(struct TreeNode_07_p1 *node);
@@ -192,7 +192,7 @@ int main(){
 
 
 //1
-struct TreeNode_07_p1*  newNode_07_p1(double item){
+struct TreeNode_07_p1* newNode_07_p1(double item){
     auto *temp = (struct TreeNode_07_p1 *)malloc(sizeof(struct TreeNode_07_p1));
     temp->data = item;
     temp->left = temp->right = nullptr;
