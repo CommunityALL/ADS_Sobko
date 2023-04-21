@@ -23,7 +23,8 @@ struct TreeNode_07_p2 {
     TreeNode_07_p2 *right{};
 };
 
-static string ch_hor = "-", ch_ver = "|", ch_ddia = "/", ch_rddia = "\\", ch_udia = "\\", ch_ver_hor = "|-", ch_udia_hor = "\\-", ch_ddia_hor = "/-", ch_ver_spa = "| ";
+static string ch_hor = "-", ch_ver = "|", ch_ddia = "/", ch_rddia = "\\", ch_udia = "\\", ch_ver_hor = "|-",
+            ch_udia_hor = "\\-", ch_ddia_hor = "/-", ch_ver_spa = "| ";
 
 //1
 void display_07_p1(TreeNode_07_p1 const * tree, string const & prefix = "", bool root = true, bool last = true) {
