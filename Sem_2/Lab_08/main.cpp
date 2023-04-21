@@ -119,26 +119,25 @@ int main(){
     cout << "After Shell sort:\n";
     int arrRes[counter];
     counter = 0;
-    for (int i = 0; i < sizeA; i++){
-        if (sizeA <= sizeB) {
+    if (sizeA <= sizeB) {
+        for (int i = 0; i < sizeA; i++){
             if (countersA[i] > 1 && countersB[i] > 1){
                 arrRes[counter] = arrA[counter];
                 counter++;
             }
         }
-        else
-        if (countersA[i] > 1 && countersB[i] > 1){
-            arrRes[counter] = arrB[counter];
-            counter++;
+
+    } else {
+        for (int i = 0; i < sizeB; i++){
+            if (countersA[i] > 1 && countersB[i] > 1){
+                arrRes[counter] = arrB[counter];
+                counter++;
+            }
         }
     }
-
     int N = sizeof(arrRes)/sizeof(arrRes[0]);
-
     shellSort(arrRes, N);
-
     int last = -1;
-
     for (int i = 0; i < counter; i++){
         if(arrRes[i] != last){
             cout << arrRes[i] << "  ";
