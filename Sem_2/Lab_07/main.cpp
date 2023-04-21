@@ -23,8 +23,7 @@ struct TreeNode_07_p2 {
     TreeNode_07_p2 *right{};
 };
 
-static string ch_hor = "-", ch_ver = "|", ch_ddia = "/", ch_rddia = "\\", ch_udia = "\\", ch_ver_hor = "|-",
-            ch_udia_hor = "\\-", ch_ddia_hor = "/-", ch_ver_spa = "| ";
+static string ch_ver_hor = "|-", ch_udia_hor = "\\-", ch_ver_spa = "| ";
 
 //1
 void display_07_p1(TreeNode_07_p1 const * tree, string const & prefix = "", bool root = true, bool last = true) {
@@ -47,9 +46,7 @@ void find_07_p1(TreeNode_07_p1 const * tree, double data, string const & prefix 
     if (!tree || (!tree->left && !tree->right))
         return;
     if (data < tree->data)find_07_p1(tree->left, data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, true);
-    else find_07_p1(tree->right, data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, true);;
-//    for (size_t i = 0; i < v.size(); ++i)
-//        find_07_p1(v[i], data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, i + 1 >= v.size());
+    else if (data > tree->data) find_07_p1(tree->right, data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, true);
 }
 
 struct TreeNode_07_p1* newNode_07_p1(double item);
