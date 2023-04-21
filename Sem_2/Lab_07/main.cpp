@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -17,9 +18,9 @@ struct TreeNode_07_p1 {
 
 struct TreeNode_07_p2 {
     string name;
-    int age;
-    TreeNode_07_p2 *left;
-    TreeNode_07_p2 *right;
+    int age{};
+    TreeNode_07_p2 *left{};
+    TreeNode_07_p2 *right{};
 };
 
 static string ch_hor = "-", ch_ver = "|", ch_ddia = "/", ch_rddia = "\\", ch_udia = "\\", ch_ver_hor = "|-", ch_udia_hor = "\\-", ch_ddia_hor = "/-", ch_ver_spa = "| ";
@@ -57,7 +58,7 @@ struct TreeNode_07_p1* deleteNode_07_p1(struct TreeNode_07_p1 *root, double data
 
 //2
 struct TreeNode_07_p2* newNode_07_p2(string name, int age);
-struct TreeNode_07_p2* insert_07_p2(struct TreeNode_07_p2 *node, string name, int age);
+struct TreeNode_07_p2* insert_07_p2(struct TreeNode_07_p2 *node, const string& name, int age);
 void inorder_07_p2(struct TreeNode_07_p2 *root);
 
 int main(){
@@ -87,7 +88,7 @@ int main(){
                         cout << "Enter the value of the new element:\n";
                         double data;
                         cin >> data;
-                        if (currentNode == NULL){
+                        if (currentNode == nullptr){
                             currentNode = newNode_07_p1(data);
                             ancestor = currentNode;
                         }
@@ -168,7 +169,7 @@ int main(){
                     int age;
                     cin >> age;
                     currentNode = lastNode;
-                    if (currentNode == NULL){
+                    if (currentNode == nullptr){
                         currentNode = newNode_07_p2(name, age);
                         ancestor = currentNode;
                     }
@@ -191,14 +192,14 @@ int main(){
 
 //1
 struct TreeNode_07_p1*  newNode_07_p1(double item){
-    struct TreeNode_07_p1 *temp = (struct TreeNode_07_p1 *)malloc(sizeof(struct TreeNode_07_p1));
+    auto *temp = (struct TreeNode_07_p1 *)malloc(sizeof(struct TreeNode_07_p1));
     temp->data = item;
-    temp->left = temp->right = NULL;
+    temp->left = temp->right = nullptr;
     return temp;
 }
 
 struct TreeNode_07_p1* insert_07_p1(struct TreeNode_07_p1 *node, double data) {
-    if (node == NULL) return newNode_07_p1(data);
+    if (node == nullptr) return newNode_07_p1(data);
 
     if (data < node->data)
         node->left = insert_07_p1(node->left, data);
@@ -215,7 +216,7 @@ struct TreeNode_07_p1* insert_07_p1(struct TreeNode_07_p1 *node, double data) {
 struct TreeNode_07_p1* minValueNode_07_p1(struct TreeNode_07_p1 *node) {
     struct TreeNode_07_p1 *current = node;
 
-    while (current && current->left != NULL)
+    while (current && current->left != nullptr)
         current = current->left;
 
     return current;
@@ -224,25 +225,25 @@ struct TreeNode_07_p1* minValueNode_07_p1(struct TreeNode_07_p1 *node) {
 struct TreeNode_07_p1* maxValueNode_07_p1(struct TreeNode_07_p1 *node) {
     struct TreeNode_07_p1 *current = node;
 
-    while (current && current->right != NULL)
+    while (current && current->right != nullptr)
         current = current->right;
 
     return current;
 }
 
 struct TreeNode_07_p1* deleteNode_07_p1(struct TreeNode_07_p1 *root, double data) {
-    if (root == NULL) return root;
+    if (root == nullptr) return root;
 
     if (data < root->data)
         root->left = deleteNode_07_p1(root->left, data);
     else if (data > root->data)
         root->right = deleteNode_07_p1(root->right, data);
     else {
-        if (root->left == NULL) {
+        if (root->left == nullptr) {
             struct TreeNode_07_p1 *temp = root->right;
             free(root);
             return temp;
-        } else if (root->right == NULL) {
+        } else if (root->right == nullptr) {
             struct TreeNode_07_p1 *temp = root->left;
             free(root);
             return temp;
@@ -261,14 +262,14 @@ struct TreeNode_07_p1* deleteNode_07_p1(struct TreeNode_07_p1 *root, double data
 //2
 struct TreeNode_07_p2* newNode_07_p2(string name, int age){
     TreeNode_07_p2 *temp = new TreeNode_07_p2;
-    temp->name = name;
+    temp->name = std::move(name);
     temp->age = age;
-    temp->left = temp->right = NULL;
+    temp->left = temp->right = nullptr;
     return temp;
 }
 
-struct TreeNode_07_p2* insert_07_p2(struct TreeNode_07_p2 *node, string name, int age){
-    if (node == NULL) return newNode_07_p2(name, age);
+struct TreeNode_07_p2* insert_07_p2(struct TreeNode_07_p2 *node, const string& name, int age){
+    if (node == nullptr) return newNode_07_p2(name, age);
 
     if (age >= node->age)
         node->left = insert_07_p2(node->left, name, age);
@@ -279,7 +280,7 @@ struct TreeNode_07_p2* insert_07_p2(struct TreeNode_07_p2 *node, string name, in
 }
 
 void inorder_07_p2(struct TreeNode_07_p2 *root) {
-    if (root != NULL) {
+    if (root != nullptr) {
         inorder_07_p2(root->left);
 
         cout << root->name << " (" << root->age << ")" << endl;
