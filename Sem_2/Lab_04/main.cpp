@@ -325,17 +325,17 @@ int main(){
             cout << counter01 << endl;
             cout << "Number of prizes:\n";
             cout << counter02 << endl;
-            cout << "Enter the number of winners (no more than the number of prizes, no more than the number of participants):\n";
+            cout << "Enter the number of winners:\n";
             int numberOfWinners;
             cin >> numberOfWinners;
-            if (numberOfWinners > counter01){
-                cout << "Incorrect input.\n";
-                return -1;
-            }
-            if (numberOfWinners > counter02){
-                cout << "Incorrect input.\n";
-                return -1;
-            }
+//            if (numberOfWinners > counter01){
+//                cout << "Incorrect input.\n";
+//                return -1;
+//            }
+//            if (numberOfWinners > counter02){
+//                cout << "Incorrect input.\n";
+//                return -1;
+//            }
             cout << "Enter the number to convert the winners:\n";
             int numberToConvertWinners;
             cin >> numberToConvertWinners;
