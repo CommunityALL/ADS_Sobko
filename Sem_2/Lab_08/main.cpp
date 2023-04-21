@@ -122,7 +122,7 @@ int main(){
     if (sizeA <= sizeB) {
         for (int i = 0; i < sizeA; i++){
             if (countersA[i] > 1 && countersB[i] > 1){
-                arrRes[counter] = arrA[counter];
+                arrRes[counter] = arrA[i];
                 counter++;
             }
         }
@@ -130,7 +130,7 @@ int main(){
     } else {
         for (int i = 0; i < sizeB; i++){
             if (countersA[i] > 1 && countersB[i] > 1){
-                arrRes[counter] = arrB[counter];
+                arrRes[counter] = arrB[i];
                 counter++;
             }
         }
