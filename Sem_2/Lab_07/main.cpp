@@ -46,9 +46,10 @@ void find_07_p1(TreeNode_07_p1 const * tree, double data, string const & prefix 
     cout << endl;
     if (!tree || (!tree->left && !tree->right))
         return;
-    vector<TreeNode_07_p1*> v{tree->left, tree->right};
-    for (size_t i = 0; i < v.size(); ++i)
-        find_07_p1(v[i], data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, i + 1 >= v.size());
+    if (data < tree->data)find_07_p1(tree->left, data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, true);
+    else find_07_p1(tree->right, data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, true);;
+//    for (size_t i = 0; i < v.size(); ++i)
+//        find_07_p1(v[i], data, prefix + (root ? "" : (last ? "  " : ch_ver_spa)), false, i + 1 >= v.size());
 }
 
 struct TreeNode_07_p1* newNode_07_p1(double item);
@@ -116,6 +117,7 @@ int main(){
                     }
                     case 4: {
                         display_07_p1(ancestor);
+                        break;
                     }
                     case 0: {
                         int input02;
@@ -126,22 +128,22 @@ int main(){
                         cin >> input02;
                         switch (input02) {
                             case 1: {
-                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor) << endl;
+                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor)->data << endl;
                                 break;
                             }
                             case 2: {
-                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor) << endl;
+                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor)->data << endl;
                                 break;
                             }
                             case 3: {
-                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor) << endl;
-                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor) << endl;
+                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor)->data << endl;
+                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor)->data << endl;
                                 break;
                             }
                             default: {
                                 cout << "Invalid input is regarded as a desire to find both the maximum and the minimum.\n";
-                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor) << endl;
-                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor) << endl;
+                                cout << "Maximum: \n" << maxValueNode_07_p1(ancestor)->data << endl;
+                                cout << "Minimum: \n" << minValueNode_07_p1(ancestor)->data << endl;
                                 break;
                             }
                         }
