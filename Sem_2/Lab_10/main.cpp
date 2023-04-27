@@ -102,7 +102,7 @@ void simplePathfindingAlgorithmDijkstra(const unsigned ADJACENCY_MATRIX[VERTICES
 
 
 void simplePathfindingAlgorithmDijkstraFloyd(const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES], const unsigned VERTICES) {
-    cout << "Floyd-Warshall algorithm\n";
+    cout << "Floyd's algorithm\n";
     cout << "Shortest path matrix:\n";
     string letters[6] ={"a", "b", "c", "d", "e", "f"};
     int D[VERTICES][VERTICES];
