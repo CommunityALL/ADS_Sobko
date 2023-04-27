@@ -7,12 +7,12 @@ using namespace std;
 const unsigned START = 2;
 const unsigned VERTICES = 6;
 const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES] = {
-        {1, 0, 0, 0, 0, 1},
-        {1, 1, 0, 1, 0, 1},
+        {0, 0, 1, 0, 1, 1},
+        {1, 0, 1, 0, 0, 0},
         {1, 0, 0, 1, 1, 0},
         {0, 0, 0, 0, 1, 0},
-        {0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0}};
+        {0, 0, 0, 1, 0, 1},
+        {0, 0, 0, 0, 1, 0}};
 void simplePathfindingAlgorithmDijkstra(const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES], const unsigned &START);
 void simplePathfindingAlgorithmDijkstraFloyd(const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES], const unsigned VERTICES);
 
