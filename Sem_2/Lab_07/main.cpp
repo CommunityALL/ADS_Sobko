@@ -118,7 +118,7 @@ int main(){
                     }
                     case 0: {
                         int input02;
-                        cout << "Do you want to find...\n" <<
+                        cout << "You want to find...\n" <<
                              "1 - maximum.\n" <<
                              "2 - minimum.\n" <<
                              "3 - maximum and minimum\n";
