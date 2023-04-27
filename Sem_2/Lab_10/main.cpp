@@ -4,20 +4,20 @@
 
 using namespace std;
 
-const unsigned START = 5;
+const unsigned START = 2;
 const unsigned VERTICES = 6;
 const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES] = {
-        {0, 1, 0, 1, 1, 0},
-        {1, 0, 1, 0, 1, 0},
-        {0, 1, 0, 0, 0, 1},
         {1, 0, 0, 0, 0, 1},
-        {1, 1, 0, 0, 1, 0},
-        {0, 0, 1, 1, 0, 0}};
+        {1, 1, 0, 1, 0, 1},
+        {1, 0, 0, 1, 1, 0},
+        {0, 0, 0, 0, 1, 0},
+        {0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0}};
 void simplePathfindingAlgorithmDijkstra(const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES], const unsigned &START);
 void simplePathfindingAlgorithmDijkstraFloyd(const unsigned ADJACENCY_MATRIX[VERTICES][VERTICES], const unsigned VERTICES);
 
 int main(){
-    cout << "Lab_09 var_4" << endl;
+    cout << "Lab_10 var_4" << endl;
     simplePathfindingAlgorithmDijkstra(ADJACENCY_MATRIX, START);
 
     simplePathfindingAlgorithmDijkstraFloyd(ADJACENCY_MATRIX, VERTICES);
