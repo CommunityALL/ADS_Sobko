@@ -1,10 +1,6 @@
 #include <iomanip>
 #include <climits>
 #include <iostream>
-//#include "stdafx.h"
-//const int maxV=1000;
-//int i, j;
-//int GR[maxV][maxV];
 
 using namespace std;
 
