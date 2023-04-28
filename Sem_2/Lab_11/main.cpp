@@ -46,7 +46,10 @@ int main() {
                 sumOfMembersOfSeries = TheThirdWay(numberOfMembersSeries, 1, 1, sumOfMembersOfSeries);
                 break;
             }
-            default:{}
+            default:{
+                cout << "Incorrect input.\n";
+                return -1;
+            }
         }
     }
     cout << "The sum of the members of the series:\n" <<
@@ -79,7 +82,10 @@ double TheSecondWay(int numberOfMembersSeries, int numberMember, double lastMemb
     if (numberOfMembersSeries - counter > 0){
         counter++;
         double sumMembersSeries = TheSecondWay(numberOfMembersSeries, numberMember, lastMemberValue, sumValue, counter);
-        numberMember = numberMember + counter + 2;
+        numberMember = numberOfMembersSeries - counter + 2;
+        for (int i = 2; i < numberMember; i ++){
+            lastMemberValue = SearchMemberValueSeries(i, lastMemberValue);
+        }
         double memberValue = SearchMemberValueSeries(numberMember, lastMemberValue);
         sumMembersSeries = SearchSumMembersSeries(sumMembersSeries, memberValue);
     return sumMembersSeries;
